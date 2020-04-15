@@ -70,7 +70,7 @@
       "uninstallerIcon": "build/icons/icon.ico"
     }
   },
-  "proxy": "http://192.168.101.195:8080/app/mock/",
+  "proxy": "http://rap2.taobao.org:38080/app/mock/250831",
   "eslintConfig": {
     "extends": "react-app"
   },

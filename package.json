@@ -1,0 +1,89 @@
+{
+  "name": "react-electron",
+  "version": "1.0.0",
+  "homepage": "./",
+  "dependencies": {
+    "echarts-for-react": "^2.0.15-beta.1",
+    "electron-updater": "^4.2.0"
+  },
+  "devDependencies": {
+    "antd": "^3.19.2",
+    "array-move": "^2.1.0",
+    "babel-plugin-import": "^1.12.0",
+    "chalk": "^2.4.2",
+    "concurrently": "^5.0.0",
+    "cross-env": "^5.2.0",
+    "customize-cra": "^0.2.13",
+    "del": "^5.1.0",
+    "dva": "^2.4.1",
+    "echarts": "^4.7.0",
+    "dva-loading": "^3.0.12",
+    "electron": "^7.1.9",
+    "electron-builder": "^22.2.0",
+    "electron-debug": "^3.0.1",
+    "gulp": "^4.0.2",
+    "gulp-watch": "^5.0.1",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-app-rewired": "^2.1.3",
+    "react-document-title": "^2.0.3",
+    "react-dom": "^16.8.6",
+    "react-loadable": "^5.5.0",
+    "react-scripts": "3.0.1",
+    "react-sortable-hoc": "^1.9.1",
+    "redux-logger": "^3.0.6"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run start:web\" \"npm run start:electron\" ",
+    "build": "npm run build:render && npm run build:electron",
+    "start:web": "react-app-rewired start",
+    "start:electron": "cross-env NODE_ENV=development gulp watch:electron",
+    "build:electron": "electron-builder",
+    "build:render": "npm run build:web && gulp build",
+    "build:gulp": "gulp build",
+    "build:web": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
+  },
+  "build": {
+    "productName": "react-electron",
+    "appId": "com.example.yourapp",
+    "directories": {
+      "output": "dist"
+    },
+    "asar": false,
+    "files": [],
+    "win": {
+      "icon": "build/icons/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "runAfterFinish": true,
+      "installerIcon": "build/icons/icon.ico",
+      "uninstallerIcon": "build/icons/icon.ico"
+    }
+  },
+  "proxy": "http://192.168.101.195:8080/app/mock/",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

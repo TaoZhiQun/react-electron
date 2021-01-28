@@ -18,7 +18,7 @@
     "dva": "^2.4.1",
     "echarts": "^4.7.0",
     "dva-loading": "^3.0.12",
-    "electron": "^7.1.9",
+    "electron": "^9.4.0",
     "electron-builder": "^22.2.0",
     "electron-debug": "^3.0.1",
     "gulp": "^4.0.2",
